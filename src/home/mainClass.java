@@ -44,7 +44,7 @@ public class mainClass {
                             "Salario final del empleado No." + emploForHour.getId() + " - " + emploForHour.getName()
                                     + " "
                                     + emploForHour.getLastname()
-                                    + " = Salaraio Calculado (tarifa * horas): " + emploForHour.calculateSalary());
+                                    + " = Salaraio Calculado (tarifa(35Q*H) * horas): " + emploForHour.calculateSalary());
 
                     break;
                 }

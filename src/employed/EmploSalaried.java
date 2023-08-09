@@ -12,7 +12,8 @@ package employed;
 // Clase EmpleadoAsalariado que hereda de la clase Empleado
 public class EmploSalaried extends EmployedClass {
 
-    // Constructor de la clase EmpleadoAsalariado que llama al constructor de la clase padre
+    // Constructor de la clase EmpleadoAsalariado que llama al constructor de la
+    // clase padre
     public EmploSalaried(int id, String name, String lastname, double salary) {
         // Llamada al constructor de la clase padre para inicializar atributos
         super(id, name, lastname, salary);
@@ -24,11 +25,11 @@ public class EmploSalaried extends EmployedClass {
         // Definición de bonificación y cálculo de descuento IGSS
         double boni = 250;
         double IGSS = super.getSalary() * 0.0483;
-        
+
         // Impresión de información sobre bonificación y descuento
-        System.out.println("Se le restará la bonificación Q" + boni + " y el IGSS Q" + IGSS);
-        
+        System.out.println("la bonificación de ley Q" + boni + " y se le restara el IGSS Q" + IGSS);
+
         // Cálculo del salario neto
-        return getSalary() - (boni + IGSS);
+        return (getSalary() + boni) - (IGSS);
     }
 }
