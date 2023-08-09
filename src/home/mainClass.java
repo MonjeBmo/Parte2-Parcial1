@@ -34,8 +34,9 @@ public class mainClass {
                     int hours = s.nextInt();
 
                     // Crear objeto de tipo EmpleadoPorHora
-                    // se define 0 el salario ya que gana por horas laboradas 
-                    // se establece una tarifa de Q35 por hora y la definimos nosotros como desarrollador para evitar que cobren demasiado 
+                    // se define 0 el salario ya que gana por horas laboradas
+                    // se establece una tarifa de Q35 por hora y la definimos nosotros como
+                    // desarrollador para evitar que cobren demasiado
                     EmployedClass emploForHour = new EmploForHour(id, name, lastname, 0, hours, 35);
 
                     // Mostrar resultado del cálculo de salario por hora
@@ -50,7 +51,7 @@ public class mainClass {
                 case 2: {
                     // Ingresar empleado asalariado
                     System.out.println("Ingrese Salario Base : ");
-                    int salaryBase = s.nextInt();
+                    double salaryBase = s.nextDouble();
 
                     // Crear objeto de tipo EmpleadoAsalariado
                     EmployedClass emploSalaried = new EmploSalaried(id, name, lastname, salaryBase);
@@ -72,7 +73,7 @@ public class mainClass {
 
                     // Crear objeto de tipo EmpleadoPorComision
                     // Le definismo un salario base para que no sea poco su salario del empleado.
-                    // definimos la comision de un 5% para evita que cobren el 100% de ganancia  
+                    // definimos la comision de un 5% para evita que cobren el 100% de ganancia
                     EmployedClass emploCommissioned = new EmploCommissioned(id, name, lastname, 1000, cantSales, 0.05);
 
                     // Mostrar resultado del cálculo de salario por comisión
@@ -89,12 +90,14 @@ public class mainClass {
                     // Mostrar la cantidad de empleados ingresados y despedirse
                     System.out.println("Cantidad de empleados ingresado -> " + employed.EmployedClass.countEmployed);
                     System.out.println("Adios!, Feliz Dia.");
+                    break;
                 }
                 default:
                     System.out.println("Opcion invalida!");
                     break;
             }
 
+            s.nextLine();
         } while (key != 4);
 
         s.close();
