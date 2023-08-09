@@ -11,10 +11,12 @@ public class mainClass {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
 
-        int key = 0;
+        int key = 0, id = 0;
 
+        // Ciclo principal para ingresar empleados y realizar cálculos
         do {
-            System.out.println("<---Ingreso de un nuevo empleado--->");
+            id += 1;
+            System.out.println("<--- Ingreso de un nuevo empleado --->");
             System.out.println("Ingrese el nombre del Empleado");
             String name = s.nextLine();
 
@@ -22,19 +24,21 @@ public class mainClass {
             String lastname = s.nextLine();
 
             System.out.println(
-                    "Ingrese el tipo de empleado\n 1-Por hora\n 2-Asalariado \n 3-PorComision \n 4-Salir\nopcion : ");
+                    "Ingrese el tipo de empleado\n 1 - Por hora\n 2 - Asalariado \n 3 - Por Comision \n 4 - Salir\nOpcion: ");
             key = s.nextInt();
 
             switch (key) {
                 case 1: {
-
+                    // Ingresar empleado por hora
                     System.out.println("Ingrese cant de Horas : ");
                     int hours = s.nextInt();
 
-                    // La tarifa la define la empresa osea nosotros como desarrolladores Q27 la hora
-                    // en este caso el salario se pone 0 ya que se calcule despues
-                    EmployedClass emploForHour = new EmploForHour(1, name, lastname, 0, hours, 35);
+                    // Crear objeto de tipo EmpleadoPorHora
+                    // se define 0 el salario ya que gana por horas laboradas 
+                    // se establece una tarifa de Q35 por hora y la definimos nosotros como desarrollador para evitar que cobren demasiado 
+                    EmployedClass emploForHour = new EmploForHour(id, name, lastname, 0, hours, 35);
 
+                    // Mostrar resultado del cálculo de salario por hora
                     System.out.println(
                             "Salario final del empleado No." + emploForHour.getId() + " - " + emploForHour.getName()
                                     + " "
@@ -44,12 +48,14 @@ public class mainClass {
                     break;
                 }
                 case 2: {
-
+                    // Ingresar empleado asalariado
                     System.out.println("Ingrese Salario Base : ");
                     int salaryBase = s.nextInt();
 
-                    EmployedClass emploSalaried = new EmploSalaried(2, name, lastname, salaryBase);
+                    // Crear objeto de tipo EmpleadoAsalariado
+                    EmployedClass emploSalaried = new EmploSalaried(id, name, lastname, salaryBase);
 
+                    // Mostrar resultado del cálculo de salario asalariado
                     System.out.println(
                             "Salario final del empleado No." + emploSalaried.getId() + " - " + emploSalaried.getName()
                                     + " "
@@ -60,16 +66,16 @@ public class mainClass {
                     break;
                 }
                 case 3: {
-
+                    // Ingresar empleado por comisión
                     System.out.println("Ingrese cantidad vendida en el Mes : ");
                     double cantSales = s.nextInt();
 
-                    // Nosotros como desarroladores definimos la comision para evitar errores como
-                    // el que de cobrar el 100% de la comision
-                    // DE la misma manera definimos un salario base de 0 ya que solo gana comisiones
-                    // por total de la venta del mes
-                    EmployedClass emploCommissioned = new EmploCommissioned(3, name, lastname, 1000, cantSales, 0.05);
+                    // Crear objeto de tipo EmpleadoPorComision
+                    // Le definismo un salario base para que no sea poco su salario del empleado.
+                    // definimos la comision de un 5% para evita que cobren el 100% de ganancia  
+                    EmployedClass emploCommissioned = new EmploCommissioned(id, name, lastname, 1000, cantSales, 0.05);
 
+                    // Mostrar resultado del cálculo de salario por comisión
                     System.out.println(
                             "Salario final del empleado No." + emploCommissioned.getId() + " - "
                                     + emploCommissioned.getName() + " "
@@ -80,11 +86,12 @@ public class mainClass {
                     break;
                 }
                 case 4: {
+                    // Mostrar la cantidad de empleados ingresados y despedirse
                     System.out.println("Cantidad de empleados ingresado -> " + employed.EmployedClass.countEmployed);
                     System.out.println("Adios!, Feliz Dia.");
                 }
-
                 default:
+                    System.out.println("Opcion invalida!");
                     break;
             }
 
@@ -93,5 +100,4 @@ public class mainClass {
         s.close();
 
     }
-
 }
