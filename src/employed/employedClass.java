@@ -51,7 +51,4 @@ public abstract class EmployedClass {
         this.salary = salary;
     }
 
-
-    
-
 }

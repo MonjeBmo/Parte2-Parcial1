@@ -60,13 +60,13 @@ public class mainClass {
 
                 // Nosotros como desarroladores definimos la comision para evitar errores como el que de cobrar el 100% de la comision 
                 // DE la misma manera definimos un salario base de 0 ya que solo gana comisiones por total de la venta del mes 
-                EmployedClass emploSalaried = new EmploCommissioned(3, name, lastname, 1000, cantSales, 0.05);
+                EmployedClass emploCommissioned = new EmploCommissioned(3, name, lastname, 1000, cantSales, 0.05);
 
                 System.out.println(
-                        "Salario final del empleado No." + emploSalaried.getId() + " - " + emploSalaried.getName() + " "
-                                + emploSalaried.getLastname()
+                        "Salario final del empleado No." + emploCommissioned.getId() + " - " + emploCommissioned.getName() + " "
+                                + emploCommissioned.getLastname()
                                 + " = Salaraio Calculado (Salario base + (Venta * comision)): "
-                                + emploSalaried.calculateSalary());
+                                + emploCommissioned.calculateSalary());
 
                 break;
             }
