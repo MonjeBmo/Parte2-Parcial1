@@ -9,6 +9,10 @@ public class EmployedClass {
 
     public int countEmployed;
 
+    public double calculateSalary(){
+        return getSalary();
+    }
+
     public EmployedClass(int id, String name, String lastname, double salary) {
         countEmployed += 1;
         this.id = id;
@@ -48,5 +52,8 @@ public class EmployedClass {
     public void setSalary(double salary) {
         this.salary = salary;
     }
+
+
+    
 
 }
