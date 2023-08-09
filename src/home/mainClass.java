@@ -3,6 +3,7 @@ package home;
 import java.util.Scanner;
 
 import employed.EmploForHour;
+import employed.EmploSalaried;
 import employed.EmployedClass;
 
 public class mainClass {
@@ -15,7 +16,8 @@ public class mainClass {
         System.out.println("\nIngrese el Apellido del empleado");
         String lastname = s.nextLine();
 
-        System.out.println("Ingrese el tipo de empleado\n 1-Por hora\n 2-Asalariado \n 3-PorComision \n 4-Salir\nopcion : ");
+        System.out.println(
+                "Ingrese el tipo de empleado\n 1-Por hora\n 2-Asalariado \n 3-PorComision \n 4-Salir\nopcion : ");
         int key = s.nextInt();
 
         switch (key) {
@@ -35,6 +37,22 @@ public class mainClass {
 
                 break;
             }
+            case 2: {
+
+                System.out.println("Ingrese Salario Base : ");
+                int salaryBase = s.nextInt();
+
+                EmployedClass emploSalaried = new EmploSalaried(2, name, lastname, salaryBase);
+
+                System.out.println(
+                        "Salario final del empleado No." + emploSalaried.getId() + " - " + emploSalaried.getName() + " "
+                                + emploSalaried.getLastname()
+                                + " = Salaraio Calculado (SalarioBase - (Boni+IGG)): "
+                                + emploSalaried.calculateSalary());
+
+                break;
+            }
+
             default:
                 break;
         }
