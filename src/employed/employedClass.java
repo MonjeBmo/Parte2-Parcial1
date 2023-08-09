@@ -1,13 +1,16 @@
 package employed;
 
-public class employedClass {
+public class EmployedClass {
 
     private int id;
     private String name;
     private String lastname;
     private double salary;
 
-    public employedClass(int id, String name, String lastname, double salary) {
+    public int countEmployed;
+
+    public EmployedClass(int id, String name, String lastname, double salary) {
+        countEmployed += 1;
         this.id = id;
         this.name = name;
         this.lastname = lastname;
