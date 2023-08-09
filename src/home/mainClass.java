@@ -2,6 +2,7 @@ package home;
 
 import java.util.Scanner;
 
+import employed.EmploCommissioned;
 import employed.EmploForHour;
 import employed.EmploSalaried;
 import employed.EmployedClass;
@@ -27,7 +28,7 @@ public class mainClass {
                 int hours = s.nextInt();
 
                 // La tarifa la define la empresa osea nosotros como desarrolladores Q27 la hora
-                // en este caso el salario se pone 0 para que se calcule despues
+                // en este caso el salario se pone 0 ya que se calcule despues
                 EmployedClass emploForHour = new EmploForHour(1, name, lastname, 0, hours, 35);
 
                 System.out.println(
@@ -48,6 +49,23 @@ public class mainClass {
                         "Salario final del empleado No." + emploSalaried.getId() + " - " + emploSalaried.getName() + " "
                                 + emploSalaried.getLastname()
                                 + " = Salaraio Calculado (SalarioBase - (Boni+IGG)): "
+                                + emploSalaried.calculateSalary());
+
+                break;
+            }
+            case 3: {
+
+                System.out.println("Ingrese cantidad vendida en el Mes : ");
+                double cantSales = s.nextInt();
+
+                // Nosotros como desarroladores definimos la comision para evitar errores como el que de cobrar el 100% de la comision 
+                // DE la misma manera definimos un salario base de 0 ya que solo gana comisiones por total de la venta del mes 
+                EmployedClass emploSalaried = new EmploCommissioned(3, name, lastname, 1000, cantSales, 0.05);
+
+                System.out.println(
+                        "Salario final del empleado No." + emploSalaried.getId() + " - " + emploSalaried.getName() + " "
+                                + emploSalaried.getLastname()
+                                + " = Salaraio Calculado (Salario base + (Venta * comision)): "
                                 + emploSalaried.calculateSalary());
 
                 break;
