@@ -1,6 +1,6 @@
 package employed;
 
-public class EmployedClass {
+public abstract class EmployedClass {
 
     private int id;
     private String name;
@@ -9,9 +9,7 @@ public class EmployedClass {
 
     public int countEmployed;
 
-    public double calculateSalary(){
-        return getSalary();
-    }
+    public abstract double calculateSalary();
 
     public EmployedClass(int id, String name, String lastname, double salary) {
         countEmployed += 1;
